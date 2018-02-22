@@ -21,4 +21,4 @@ ort_iot_edit:
 ort_iot_delete:
     path:   /delete/{id}
     defaults: { _controller: OrtIotBundle:Iot:delete }
-    requirements: { id: \d+ } 
+    requirements: { id: \d+ }
