@@ -7,11 +7,12 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * IoT
  *
- * @ORM\Table(name="io_t")
+ * @ORM\Table(name="IoT")
  * @ORM\Entity(repositoryClass="Ort\IotBundle\Repository\IoTRepository")
  */
 class IoT
 {
+
     /**
      * @var int
      *
@@ -39,6 +40,37 @@ class IoT
      * @ORM\Column(name="actif",type="boolean")
      */
     private $actif;
+
+    /**
+     * IoT constructor.
+     *
+     */
+    public function __construct($datas = NULL)
+    {
+        if (isset($datas['id'])) {
+            $this->id = $datas['id'];
+        } else {
+            $this->id = NULL;
+        }
+
+        if (isset($datas['nom'])) {
+            $this->setNom($datas['nom']);
+        } else {
+            $this->setNom('Undefined');
+        }
+
+        if (isset($datas['ipLocale'])) {
+            $this->setIpLocale($datas['ipLocale']);
+        } else {
+            $this->setNom('0.0.0.0');
+        }
+
+        if (isset($datas['actif'])) {
+            $this->setActif($datas['actif']);
+        } else {
+            $this->setActif(false);
+        }
+    }
 
 
     /**
