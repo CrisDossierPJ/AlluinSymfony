@@ -52,7 +52,6 @@ class IoT
         } else {
             $this->id = NULL;
         }
-
         if (isset($datas['nom'])) {
             $this->setNom($datas['nom']);
         } else {

@@ -45,7 +45,7 @@ class IotController extends Controller
 
 
 
-        //On persiste le capteur
+        //On persiste le capteu
         //et on déclenche l'enregistrement dans la bdd
         $em->persist($capteur);
         $em->flush();

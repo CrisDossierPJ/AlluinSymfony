@@ -74,6 +74,7 @@ class Typecapteur
     /**
      * Set unite
      *
+     *
      * @param string $unite
      *
      * @return Typecapteur

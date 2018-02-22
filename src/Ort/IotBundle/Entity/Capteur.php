@@ -89,7 +89,6 @@ class Capteur
 
         return $this;
     }
-
     /**
      * Get typeCapteur
      *
