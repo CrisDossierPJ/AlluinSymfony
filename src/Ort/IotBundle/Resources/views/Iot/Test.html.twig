@@ -9,7 +9,7 @@
 <ul>
     {% for capteur in listCapteur %}
         <li>
-            nom : {{ capteur.nom}}, unite: {{ capteur.unite }}
+            {{ capteur.id }}) {{ capteur.nom}}, {{ capteur.unite }}
         </li>
 
     {% else %}
@@ -18,5 +18,16 @@
         </li>
     {% endfor %}
 </ul>
+<!--
+<ul>
+    <h1>Capteur</h1>
+
+    <li>
+        nom :  { capteur.nom}}, unite: { capteur.unite }}
+    </li>
+
+
+</ul>
+-->
 </body>
 </html>

@@ -24,5 +24,9 @@ ort_iot_delete:
     requirements: { id: \d+ }
 
 ort_iot_test:
+    path:   /test/{id}
+    defaults: { _controller: OrtIotBundle:Iot:test }
+
+ort_iot_test2:
     path:   /test
     defaults: { _controller: OrtIotBundle:Iot:test }
