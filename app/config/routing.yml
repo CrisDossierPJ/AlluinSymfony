@@ -1,0 +1,7 @@
+ort_iot:
+    resource: "@OrtIotBundle/Resources/config/routing.yml"
+    prefix:   /ort
+
+app:
+    resource: '@AppBundle/Controller/'
+    type: annotation

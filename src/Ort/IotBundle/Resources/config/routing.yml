@@ -1,0 +1,24 @@
+ort_iot_homepage:
+    path:     /
+    defaults: { _controller: OrtIotBundle:Iot:index }
+
+ort_iot_view:
+    path:   /view/{id}
+    defaults:
+        _controller: OrtIotBundle:Iot:view
+    requirements:
+        id: \d+
+
+ort_iot_add:
+    path:   /add
+    defaults: { _controller: OrtIotBundle:Iot:add }
+
+ort_iot_edit:
+    path:   /edit/{id}
+    defaults: { _controller: OrtIotBundle:Iot:edit }
+    requirements: { id: \d+ }
+
+ort_iot_delete:
+    path:   /delete/{id}
+    defaults: { _controller: OrtIotBundle:Iot:delete }
+    requirements: { id: \d+ }
