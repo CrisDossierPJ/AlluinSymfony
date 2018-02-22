@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ Title }}</title>
+</head>
+<body>
+<h1>{{ Title }}</h1>
+<ul>
+    {% for capteur in listCapteur %}
+        <li>
+            nom : {{ capteur.nom}}, unite: {{ capteur.unite }}
+        </li>
+
+    {% else %}
+        <li>
+            Pas (encore ! ) d'iot
+        </li>
+    {% endfor %}
+</ul>
+</body>
+</html>
