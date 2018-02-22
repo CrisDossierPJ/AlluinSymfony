@@ -27,7 +27,6 @@ class IoT
      * @ORM\Column(name="nom", type="string", length=45)
      */
     private $nom;
-
     /**
      * @var string
      *
