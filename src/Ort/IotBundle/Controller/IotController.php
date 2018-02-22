@@ -24,7 +24,7 @@ class IotController extends Controller
             ->findAll();
 
         return $this->render('@OrtIot/Iot/index.html.twig', array(
-            'listIots'=>$litsIots,
+            'listIots' => $litsIots,
         ));
     }
 
@@ -35,17 +35,16 @@ class IotController extends Controller
 
 
         //Récupération du type capteur 1
-        $typeCapteur= $em->getRepository('OrtIotBundle:Typecapteur')->find(3);
+        $typeCapteur = $em->getRepository('OrtIotBundle:Typecapteur')->findOneBynom('tension');
 
-        $iot= $em->getRepository('OrtIotBundle:IoT')->find(5);
+        $iot = $em->getRepository('OrtIotBundle:IoT')->findOneBynom("bidon");
 
         //Instanciation du capteur et initialisation
         $capteur = new Capteur();
         $capteur->setNom('Ma température')->setTypeCapteur($typeCapteur)->setIot($iot);
 
 
-
-        //On persiste le capteu
+        //On persiste le capteur
         //et on déclenche l'enregistrement dans la bdd
         $em->persist($capteur);
         $em->flush();
@@ -69,9 +68,11 @@ class IotController extends Controller
             // ...
         ));
     }
-    public function testAction(/*$id = NULL*/){
 
-        $repository =  $this->getDoctrine()
+    public function testAction(/*$id = NULL*/)
+    {
+
+        $repository = $this->getDoctrine()
             ->getManager()
             ->getRepository("OrtIotBundle:Typecapteur");
 
@@ -81,8 +82,8 @@ class IotController extends Controller
         $capteur= $repository->find($id);*/
         $data = array(
             /*'capteur'=>$capteur,*/
-            'Title'=>'Test',
-            'listCapteur'=>$listCapteur);
+            'Title' => 'Test',
+            'listCapteur' => $listCapteur);
 
 
         return $this->render('@OrtIot/Iot/test.html.twig', $data);

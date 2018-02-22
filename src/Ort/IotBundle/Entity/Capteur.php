@@ -29,13 +29,13 @@ class Capteur
     private $nom;
 
     /**
-     * @ORM\OneToOne(targetEntity="Ort\IotBundle\Entity\Typecapteur")
+     * @ORM\ManyToOne(targetEntity="Ort\IotBundle\Entity\Typecapteur")
      * @ORM\JoinColumn(nullable=false)
      */
     private $typeCapteur;
 
     /**
-     * @ORM\OneToOne(targetEntity="Ort\IotBundle\Entity\IoT")
+     * @ORM\ManyToOne(targetEntity="Ort\IotBundle\Entity\IoT")
      * @ORM\JoinColumn(nullable=false)
      */
     private $iot;
