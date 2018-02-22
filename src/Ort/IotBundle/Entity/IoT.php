@@ -33,6 +33,12 @@ class IoT
      * @ORM\Column(name="ipLocale", type="string", length=15)
      */
     private $ipLocale;
+    /**
+     * @var bool
+     *
+     * @ORM\Column(name="actif",type="boolean")
+     */
+    private $actif;
 
 
     /**
@@ -92,5 +98,28 @@ class IoT
     {
         return $this->ipLocale;
     }
-}
 
+    /**
+     * Set actif
+     *
+     * @param boolean $actif
+     *
+     * @return IoT
+     */
+    public function setActif($actif)
+    {
+        $this->actif = $actif;
+
+        return $this;
+    }
+
+    /**
+     * Get actif
+     *
+     * @return boolean
+     */
+    public function getActif()
+    {
+        return $this->actif;
+    }
+}
